@@ -1,30 +1,32 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import { List, type ListRowProps } from "react-virtualized";
+
+import { generateList } from "./utils";
+
+// List Array containing data objects that will be rendered as a row
+const list = generateList({ rowCount: 20 });
+
+// Required to render each row in the list
+// TODO: Calculate the height of each row
+const renderRow = ({ index, key, style }: ListRowProps) => (
+  <div key={key} style={style}>
+    <div className="flex justify-between p-4 bg-neutral-900 rounded-md shadow-sm">
+      <div>
+        <p>{list[index].name}</p>
+        <p>{list[index].text}</p>
+      </div>
+      <div>
+        <img src={list[index].image} alt={list[index].name} height={48} width={48} />
+      </div>
+    </div>
+  </div>
+);
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
+    <div>
+      <List rowHeight={200} rowCount={list.length} rowRenderer={renderRow} width={800} height={600} overscanRowCount={3} />
+    </div>
   );
 }
 
