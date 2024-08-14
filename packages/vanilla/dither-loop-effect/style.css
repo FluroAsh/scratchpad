@@ -1,0 +1,60 @@
+/*
+https://stackoverflow.com/questions/38040149/convert-image-to-variable-number-of-grayscales
+https://yoksel.github.io/svg-filters/#/
+https://en.wikipedia.org/wiki/Ordered_dithering#Threshold_map
+*/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  max-height: 100vh;
+}
+
+svg {
+  height: 0;
+  width: 0;
+  position: absolute;
+  animation: test 1s;
+}
+
+@keyframes test {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.video-left {
+  filter: url(#filter1);
+  width: 50%;
+  object-fit: cover;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.video-right {
+  filter: url(#filter2);
+  width: 50%;
+  object-fit: cover;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.color {
+  background: linear-gradient(90deg, black 10%, white);
+  filter: url(#filter);
+  color: white;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  a {
+    color: white;
+  }
+}
