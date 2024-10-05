@@ -1,0 +1,9 @@
+{
+  "name": "scratchpad",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  }
+}
