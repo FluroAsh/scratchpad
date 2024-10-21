@@ -40,6 +40,8 @@ function render(element, container) {
   container.appendChild(node);
 }
 
+// TODO: Part 3 - Concurrent Mode...
+
 const Didact = {
   createElement,
   render,
