@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": ["es2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "removeComments": false,
+    "resolveJsonModule": false,
+    "skipDefaultLibCheck": false,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "target": "es2022",
+    "verbatimModuleSyntax": false
+  }
+}

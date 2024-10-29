@@ -1,9 +1,21 @@
 {
-  "name": "scratchpad",
-  "version": "1.0.0",
-  "type": "module",
-  "license": "ISC",
-  "dependencies": {
-    "chalk": "^5.3.0"
-  }
+  "name": "@scratchpad/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@nx/js": "20.0.6",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "nx": "20.0.6",
+    "prettier": "^2.6.2",
+    "tslib": "^2.3.0",
+    "typescript": "~5.5.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
