@@ -57,13 +57,14 @@ function workLoop(deadline) {
 requestIdleCallback(workLoop);
 
 function performUnitOfWork(fiber) {
-  // If the fiber has a dom property, create a DOM node for it
-  if (fiber.dom) {
+  // If the fiber DOES NOT have a dom property, create a DOM node for it
+  if (!fiber.dom) {
     fiber.dom = createDom(fiber);
   }
 
   // If the fiber has a parent, append the created DOM node to the parent's DOM node
   if (fiber.parent) {
+    console.log(fiber.parent.dom, fiber.dom);
     fiber.parent.dom.appendChild(fiber.dom);
   }
 
